@@ -5,165 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Streamflix</title>
     <link rel="stylesheet" href="css/style.css" />
-    <meta
-      name="description"
-      content="Streamflix - Votre plateforme ultime de films et séries en streaming"
-    />
+    <meta name="description" content="Streamflix - Votre plateforme ultime de films et séries en streaming" />
+    <meta name="keywords" content="streaming, films, séries, Streamflix, vidéo, VOD, cinéma, thriller, sci-fi, drama, action" />
+    <meta name="author" content="Streamflix" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
   </head>
   <body>
-    <header>
-      <nav aria-label="Navigation principale">
-        <a href="index.html">
-          <img src="img/logo.png" alt="Logo Streamflix" />
+    <header role="banner">
+      <nav role="navigation" aria-label="Navigation principale">
+        <a href="index.html" tabindex="0">
+          <img src="images/logo.png" alt="Logo Streamflix, retour à l'accueil" />
         </a>
-        <a href="index.html">Accueil</a>
-        <a href="#films">Films</a>
-        <a href="#series">Séries</a>
-        <a href="#mylist">Ma liste</a>
-        <form class="recherche" role="search" aria-label="Recherche de contenu">
+        <ul id="main-menu" role="menubar">
+          <li><a role="menuitem" href="index.html" tabindex="0">Accueil</a></li>
+          <li><a role="menuitem" href="#films" tabindex="0">Films</a></li>
+          <li><a role="menuitem" href="#series" tabindex="0">Séries</a></li>
+          <li><a role="menuitem" href="#mylist" tabindex="0">Ma liste</a></li>
+        </ul>
+        <form class="recherche" role="search" aria-label="Recherche de contenu" autocomplete="off">
           <label for="recherche">Rechercher</label>
-          <input type="text" id="recherche" placeholder="Rechercher..." />
-          <button type="submit">OK</button>
+          <input type="search" id="recherche" name="recherche" placeholder="Rechercher..." aria-label="Rechercher un film ou une série" required />
+          <button type="submit" aria-label="Valider la recherche">OK</button>
         </form>
-        <button aria-haspopup="true" aria-expanded="false">Menu profil</button>
+        <div class="profil-menu" role="menu">
+          <button aria-haspopup="true" aria-expanded="false" aria-label="Ouvrir le menu profil" tabindex="0">Menu profil</button>
+        </div>
       </nav>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <img src="images/films/inception.webp" alt="Affiche du film Inception" />
+  <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title" role="region">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="images/hero-bg.jpg" alt="" />
+        </div>
         <div class="overlay">
+          <img src="images/films/inception.webp" alt="Affiche du film Inception" class="hero-poster" />
           <h1 id="hero-title">Inception</h1>
           <p>
-            Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre
-            qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
+            Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
           </p>
-          <p><strong>2010</strong> • 2h28 • ⭐ 4.5/5 • Sci-Fi, Thriller</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
+          <ul class="meta">
+            <li><strong>Année :</strong> 2010</li>
+            <li><strong>Durée :</strong> 2h28</li>
+            <li><strong>Note :</strong> ⭐ 4.5/5</li>
+            <li><strong>Genres :</strong> Sci-Fi, Thriller</li>
+          </ul>
+          <div class="actions" role="group" aria-label="Actions Inception">
+            <button aria-label="Lire Inception">Lecture</button>
+            <button aria-label="Plus d'informations sur Inception">Plus d'infos</button>
+            <button aria-label="Ajouter Inception à ma liste">Ma liste</button>
           </div>
         </div>
       </section>
 
-      <section id="tendances" aria-labelledby="tendances-title">
+      <section id="tendances" aria-labelledby="tendances-title" role="region">
         <h2 id="tendances-title">Tendances actuelles</h2>
-        <article>
-          <img src="images/films/darknight.webp" alt="Affiche de The Dark Knight" />
-          <h3>The Dark Knight</h3>
-          <p>2008 • 2h32 • ⭐ 4.8/5 • Action, Crime, Drama</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
-        <article>
-          <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche de Interstellar" />
-          <h3>Interstellar</h3>
-          <p>2014 • 2h49 • ⭐ 4.7/5 • Sci-Fi, Drama</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
-        <article>
-          <img src="images/films/pulp_fiction.jpg" alt="Affiche de Pulp Fiction" />
-          <h3>Pulp Fiction</h3>
-          <p>1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
+        <div class="grid" role="list">
+          <article role="listitem">
+            <img src="images/films/darknight.webp" alt="Affiche de The Dark Knight" />
+            <h3>The Dark Knight</h3>
+            <ul class="meta">
+              <li>2008</li>
+              <li>2h32</li>
+              <li>⭐ 4.8/5</li>
+              <li>Action, Crime, Drama</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions The Dark Knight">
+              <button aria-label="Lire The Dark Knight">Lecture</button>
+              <button aria-label="Plus d'informations sur The Dark Knight">Plus d'infos</button>
+              <button aria-label="Ajouter The Dark Knight à ma liste">Ma liste</button>
+            </div>
+          </article>
+          <article role="listitem">
+            <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche de Interstellar" />
+            <h3>Interstellar</h3>
+            <ul class="meta">
+              <li>2014</li>
+              <li>2h49</li>
+              <li>⭐ 4.7/5</li>
+              <li>Sci-Fi, Drama</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions Interstellar">
+              <button aria-label="Lire Interstellar">Lecture</button>
+              <button aria-label="Plus d'informations sur Interstellar">Plus d'infos</button>
+              <button aria-label="Ajouter Interstellar à ma liste">Ma liste</button>
+            </div>
+          </article>
+          <article role="listitem">
+            <img src="images/films/pulp_fiction.jpg" alt="Affiche de Pulp Fiction" />
+            <h3>Pulp Fiction</h3>
+            <ul class="meta">
+              <li>1994</li>
+              <li>2h34</li>
+              <li>⭐ 4.6/5</li>
+              <li>Crime, Drama</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions Pulp Fiction">
+              <button aria-label="Lire Pulp Fiction">Lecture</button>
+              <button aria-label="Plus d'informations sur Pulp Fiction">Plus d'infos</button>
+              <button aria-label="Ajouter Pulp Fiction à ma liste">Ma liste</button>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="recommandes" aria-labelledby="recommandes-title">
+      <section id="recommandes" aria-labelledby="recommandes-title" role="region">
         <h2 id="recommandes-title">Recommandés pour vous</h2>
-        <article>
-          <img src="images/films/inception.webp" alt="Affiche de Inception" />
-          <h3>Inception</h3>
-          <p>2010 • 2h28 • ⭐ 4.5/5 • Sci-Fi, Thriller</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
-        <article>
-          <img src="images/films/matrix.jpeg" alt="Affiche de The Matrix" />
-          <h3>The Matrix</h3>
-          <p>1999 • 2h16 • ⭐ 4.5/5 • Action, Sci-Fi</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
-        <article>
-          <img src="images/films/forrest_gump.jpg" alt="Affiche de Forrest Gump" />
-          <h3>Forrest Gump</h3>
-          <p>1994 • 2h22 • ⭐ 4.4/5 • Drama, Romance</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
+        <div class="grid" role="list">
+          <article role="listitem">
+            <img src="images/films/inception.webp" alt="Affiche de Inception" />
+            <h3>Inception</h3>
+            <ul class="meta">
+              <li>2010</li>
+              <li>2h28</li>
+              <li>⭐ 4.5/5</li>
+              <li>Sci-Fi, Thriller</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions Inception">
+              <button aria-label="Lire Inception">Lecture</button>
+              <button aria-label="Plus d'informations sur Inception">Plus d'infos</button>
+              <button aria-label="Ajouter Inception à ma liste">Ma liste</button>
+            </div>
+          </article>
+          <article role="listitem">
+            <img src="images/films/matrix.jpeg" alt="Affiche de The Matrix" />
+            <h3>The Matrix</h3>
+            <ul class="meta">
+              <li>1999</li>
+              <li>2h16</li>
+              <li>⭐ 4.5/5</li>
+              <li>Action, Sci-Fi</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions The Matrix">
+              <button aria-label="Lire The Matrix">Lecture</button>
+              <button aria-label="Plus d'informations sur The Matrix">Plus d'infos</button>
+              <button aria-label="Ajouter The Matrix à ma liste">Ma liste</button>
+            </div>
+          </article>
+          <article role="listitem">
+            <img src="images/films/forrest_gump.jpg" alt="Affiche de Forrest Gump" />
+            <h3>Forrest Gump</h3>
+            <ul class="meta">
+              <li>1994</li>
+              <li>2h22</li>
+              <li>⭐ 4.4/5</li>
+              <li>Drama, Romance</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions Forrest Gump">
+              <button aria-label="Lire Forrest Gump">Lecture</button>
+              <button aria-label="Plus d'informations sur Forrest Gump">Plus d'infos</button>
+              <button aria-label="Ajouter Forrest Gump à ma liste">Ma liste</button>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="nouveautes" aria-labelledby="nouveautes-title">
+      <section id="nouveautes" aria-labelledby="nouveautes-title" role="region">
         <h2 id="nouveautes-title">Nouveautés</h2>
-        <article>
-          <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche de Interstellar" />
-          <h3>Interstellar</h3>
-          <p>2014 • 2h49 • ⭐ 4.7/5 • Sci-Fi, Drama</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
-        <article>
-          <img src="images/films/darknight.webp" alt="Affiche de The Dark Knight" />
-          <h3>The Dark Knight</h3>
-          <p>2008 • 2h32 • ⭐ 4.8/5 • Action, Crime, Drama</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
-        <article>
-          <img src="images/films/inception.webp" alt="Affiche de Inception" />
-          <h3>Inception</h3>
-          <p>2010 • 2h28 • ⭐ 4.5/5 • Sci-Fi, Thriller</p>
-          <div class="actions">
-            <button>Lecture</button>
-            <button>Plus d'infos</button>
-            <button>Ma liste</button>
-          </div>
-        </article>
+        <div class="grid" role="list">
+          <article role="listitem">
+            <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche de Interstellar" />
+            <h3>Interstellar</h3>
+            <ul class="meta">
+              <li>2014</li>
+              <li>2h49</li>
+              <li>⭐ 4.7/5</li>
+              <li>Sci-Fi, Drama</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions Interstellar">
+              <button aria-label="Lire Interstellar">Lecture</button>
+              <button aria-label="Plus d'informations sur Interstellar">Plus d'infos</button>
+              <button aria-label="Ajouter Interstellar à ma liste">Ma liste</button>
+            </div>
+          </article>
+          <article role="listitem">
+            <img src="images/films/darknight.webp" alt="Affiche de The Dark Knight" />
+            <h3>The Dark Knight</h3>
+            <ul class="meta">
+              <li>2008</li>
+              <li>2h32</li>
+              <li>⭐ 4.8/5</li>
+              <li>Action, Crime, Drama</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions The Dark Knight">
+              <button aria-label="Lire The Dark Knight">Lecture</button>
+              <button aria-label="Plus d'informations sur The Dark Knight">Plus d'infos</button>
+              <button aria-label="Ajouter The Dark Knight à ma liste">Ma liste</button>
+            </div>
+          </article>
+          <article role="listitem">
+            <img src="images/films/inception.webp" alt="Affiche de Inception" />
+            <h3>Inception</h3>
+            <ul class="meta">
+              <li>2010</li>
+              <li>2h28</li>
+              <li>⭐ 4.5/5</li>
+              <li>Sci-Fi, Thriller</li>
+            </ul>
+            <div class="actions" role="group" aria-label="Actions Inception">
+              <button aria-label="Lire Inception">Lecture</button>
+              <button aria-label="Plus d'informations sur Inception">Plus d'infos</button>
+              <button aria-label="Ajouter Inception à ma liste">Ma liste</button>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Streamflix. Tous droits réservés.</p>
+    <footer role="contentinfo">
       <nav aria-label="Liens utiles">
-        <a href="#">Conditions d'utilisation</a>
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Aide</a>
-        <a href="#">Contact</a>
+        <ul>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Aide</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </nav>
-      <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-        <a href="#">Facebook</a>
+      <div class="socials" aria-label="Réseaux sociaux">
+        <ul>
+          <li><a href="#" aria-label="Instagram (lien factice)">Instagram</a></li>
+          <li><a href="#" aria-label="Twitter (lien factice)">Twitter</a></li>
+          <li><a href="#" aria-label="Facebook (lien factice)">Facebook</a></li>
+        </ul>
       </div>
+      <p>&copy; 2024 Streamflix. Tous droits réservés.</p>
     </footer>
   </body>
 </html>
