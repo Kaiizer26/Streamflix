@@ -6,9 +6,9 @@
     <title>Streamflix</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta
-  name="description"
-  content="Streamflix - Votre plateforme ultime de films et séries en streaming. Découvrez Inception (2010, Sci-Fi/Thriller, ⭐4.5/5), The Dark Knight (2008, Action/Crime, ⭐4.8/5), Interstellar (2014, Sci-Fi/Drama, ⭐4.7/5), Pulp Fiction (1994, Crime/Drama, ⭐4.6/5), Matrix (1999, Action/Sci-Fi, ⭐4.5/5) et bien d'autres."
-/>
+      name="description"
+      content="Streamflix - Votre plateforme ultime de films et séries en streaming. Découvrez Inception (2010, Sci-Fi/Thriller, ⭐4.5/5), The Dark Knight (2008, Action/Crime, ⭐4.8/5), Interstellar (2014, Sci-Fi/Drama, ⭐4.7/5), Pulp Fiction (1994, Crime/Drama, ⭐4.6/5), Matrix (1999, Action/Sci-Fi, ⭐4.5/5) et bien d'autres."
+    />
 
     <meta
       name="keywords"
@@ -27,22 +27,12 @@
             class="logo"
           />
         </a>
-        <article>
-          <ul id="main-menu" role="menubar">
-            <li>
-              <a role="menuitem" href="index.html" tabindex="0">Accueil</a>
-            </li>
-            <li><a role="menuitem" href="#films" tabindex="0">Films</a></li>
-            <li><a role="menuitem" href="#series" tabindex="0">Séries</a></li>
-            <li><a role="menuitem" href="#mylist" tabindex="0">Ma liste</a></li>
-          </ul>
+        <article class="nav-items">
           <form
             class="recherche"
             role="search"
             aria-label="Recherche de contenu"
-            autocomplete="off"
-          >
-            <label for="recherche">Rechercher</label>
+            autocomplete="off">
             <input
               type="search"
               id="recherche"
@@ -53,7 +43,15 @@
             />
             <button type="submit" aria-label="Valider la recherche">OK</button>
           </form>
-          <div class="profil-menu" role="menu">
+          <ul id="main-menu" role="menubar">
+            <li>
+              <a role="menuitem" href="index.html" tabindex="0">Accueil</a>
+            </li>
+            <li><a role="menuitem" href="#films" tabindex="0">Films</a></li>
+            <li><a role="menuitem" href="#series" tabindex="0">Séries</a></li>
+            <li><a role="menuitem" href="#mylist" tabindex="0">Ma liste</a></li>
+          </ul>
+          <div class="profile-menu" role="menu">
             <button
               aria-haspopup="true"
               aria-expanded="false"
