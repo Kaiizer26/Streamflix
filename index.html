@@ -1,343 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Streamflix</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta
-      name="description"
-      content="Streamflix - Votre plateforme ultime de films et séries en streaming. Découvrez Inception (2010, Sci-Fi/Thriller, ⭐4.5/5), The Dark Knight (2008, Action/Crime, ⭐4.8/5), Interstellar (2014, Sci-Fi/Drama, ⭐4.7/5), Pulp Fiction (1994, Crime/Drama, ⭐4.6/5), Matrix (1999, Action/Sci-Fi, ⭐4.5/5) et bien d'autres."
-    />
-
-    <meta
-      name="keywords"
-      content="streaming, films, séries, Streamflix, vidéo, VOD, cinéma, thriller, sci-fi, drama, action"
-    />
-    <meta name="author" content="Streamflix" />
-    <link rel="icon" href="images/logo.png" type="image/png" />
-  </head>
-  <body>
-    <header role="banner">
-      <nav role="navigation" aria-label="Navigation principale">
-        <a href="index.html" tabindex="0">
-          <img
-            src="images/logo.png"
-            alt="Logo Streamflix, retour à l'accueil"
-            class="logo"
-          />
-        </a>
-        <article class="nav-items">
-          <form
-            class="recherche"
-            role="search"
-            aria-label="Recherche de contenu"
-            autocomplete="off">
-            <input
-              type="search"
-              id="recherche"
-              name="recherche"
-              placeholder="Rechercher..."
-              aria-label="Rechercher un film ou une série"
-              required
-            />
-            <button type="submit" aria-label="Valider la recherche">OK</button>
-          </form>
-          <ul id="main-menu" role="menubar">
-            <li>
-              <a role="menuitem" href="index.html" tabindex="0">Accueil</a>
-            </li>
-            <li><a role="menuitem" href="#films" tabindex="0">Films</a></li>
-            <li><a role="menuitem" href="#series" tabindex="0">Séries</a></li>
-            <li><a role="menuitem" href="#mylist" tabindex="0">Ma liste</a></li>
-          </ul>
-          <div class="profile-menu" role="menu">
-            <button
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-label="Ouvrir le menu profil"
-              tabindex="0"
-            >
-              Menu profil
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Votre librairie en ligne</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-book me-2"></i>BookStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </div>
-        </article>
-      </nav>
-    </header>
-
-    <main id="main" tabindex="-1">
-      <section class="hero" aria-labelledby="hero-title" role="region">
-        <div class="hero-bg" aria-hidden="true">
-          <img src="images/hero-bg.jpg" alt="" />
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Romans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sciences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="overlay">
-          <img
-            src="images/films/inception.webp"
-            alt="Affiche du film Inception"
-            class="hero-poster"
-          />
-          <h1 id="hero-title">Inception</h1>
-          <p>
-            Un voleur qui s'infiltre dans les rêves des autres pour voler leurs
-            secrets découvre qu'il doit réaliser l'impossible : planter une idée
-            plutôt que de la voler.
-          </p>
-          <ul class="meta">
-            <li><strong>Année :</strong> 2010</li>
-            <li><strong>Durée :</strong> 2h28</li>
-            <li><strong>Note :</strong> ⭐ 4.5/5</li>
-            <li><strong>Genres :</strong> Sci-Fi, Thriller</li>
-          </ul>
-          <div class="actions" role="group" aria-label="Actions Inception">
-            <button aria-label="Lire Inception">Lecture</button>
-            <button aria-label="Plus d'informations sur Inception">
-              Plus d'infos
-            </button>
-            <button aria-label="Ajouter Inception à ma liste">Ma liste</button>
-          </div>
-        </div>
-      </section>
+    </nav>
 
-      <section id="tendances" aria-labelledby="tendances-title" role="region">
-        <h2 id="tendances-title">Tendances actuelles</h2>
-        <div class="grid" role="list">
-          <article role="listitem">
-            <img
-              src="images/films/darknight.webp"
-              alt="Affiche de The Dark Knight"
-            />
-            <h3>The Dark Knight</h3>
-            <ul class="meta">
-              <li>2008</li>
-              <li>2h32</li>
-              <li>⭐ 4.8/5</li>
-              <li>Action, Crime, Drama</li>
-            </ul>
-            <div
-              class="actions"
-              role="group"
-              aria-label="Actions The Dark Knight"
-            >
-              <button aria-label="Lire The Dark Knight">Lecture</button>
-              <button aria-label="Plus d'informations sur The Dark Knight">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter The Dark Knight à ma liste">
-                Ma liste
-              </button>
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title mb-4">Découvrez notre sélection de livres</h1>
+                    <p class="hero-description mb-4">Plus de 10 000 ouvrages disponibles en ligne</p>
+                    <button class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-search me-2"></i>Parcourir le catalogue
+                    </button>
+                </div>
             </div>
-          </article>
-          <article role="listitem">
-            <img
-              src="images/films/Interstellar_film_poster.jpg"
-              alt="Affiche de Interstellar"
-            />
-            <h3>Interstellar</h3>
-            <ul class="meta">
-              <li>2014</li>
-              <li>2h49</li>
-              <li>⭐ 4.7/5</li>
-              <li>Sci-Fi, Drama</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions Interstellar">
-              <button aria-label="Lire Interstellar">Lecture</button>
-              <button aria-label="Plus d'informations sur Interstellar">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter Interstellar à ma liste">
-                Ma liste
-              </button>
-            </div>
-          </article>
-          <article role="listitem">
-            <img
-              src="images/films/pulp_fiction.jpg"
-              alt="Affiche de Pulp Fiction"
-            />
-            <h3>Pulp Fiction</h3>
-            <ul class="meta">
-              <li>1994</li>
-              <li>2h34</li>
-              <li>⭐ 4.6/5</li>
-              <li>Crime, Drama</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions Pulp Fiction">
-              <button aria-label="Lire Pulp Fiction">Lecture</button>
-              <button aria-label="Plus d'informations sur Pulp Fiction">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter Pulp Fiction à ma liste">
-                Ma liste
-              </button>
-            </div>
-          </article>
         </div>
-      </section>
+    </section>
 
-      <section
-        id="recommandes"
-        aria-labelledby="recommandes-title"
-        role="region"
-      >
-        <h2 id="recommandes-title">Recommandés pour vous</h2>
-        <div class="grid" role="list">
-          <article role="listitem">
-            <img src="images/films/inception.webp" alt="Affiche de Inception" />
-            <h3>Inception</h3>
-            <ul class="meta">
-              <li>2010</li>
-              <li>2h28</li>
-              <li>⭐ 4.5/5</li>
-              <li>Sci-Fi, Thriller</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions Inception">
-              <button aria-label="Lire Inception">Lecture</button>
-              <button aria-label="Plus d'informations sur Inception">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter Inception à ma liste">
-                Ma liste
-              </button>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary">Livres populaires</h2>
+                </div>
             </div>
-          </article>
-          <article role="listitem">
-            <img src="images/films/matrix.jpeg" alt="Affiche de The Matrix" />
-            <h3>The Matrix</h3>
-            <ul class="meta">
-              <li>1999</li>
-              <li>2h16</li>
-              <li>⭐ 4.5/5</li>
-              <li>Action, Sci-Fi</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions The Matrix">
-              <button aria-label="Lire The Matrix">Lecture</button>
-              <button aria-label="Plus d'informations sur The Matrix">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter The Matrix à ma liste">
-                Ma liste
-              </button>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card book-card h-100">
+                        <div class="card-body text-center">
+                            <div class="book-emoji">📖</div>
+                            <h5 class="card-title fw-bold">Le Petit Prince</h5>
+                            <p class="card-text text-muted">Antoine de Saint-Exupéry</p>
+                            <p class="book-price mb-3">12,99 €</p>
+                            <button class="btn btn-success btn-add-to-cart" data-book="Le Petit Prince">
+                                <i class="fas fa-cart-plus me-2"></i>Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card book-card h-100">
+                        <div class="card-body text-center">
+                            <div class="book-emoji">📚</div>
+                            <h5 class="card-title fw-bold">1984</h5>
+                            <p class="card-text text-muted">George Orwell</p>
+                            <p class="book-price mb-3">15,50 €</p>
+                            <button class="btn btn-success btn-add-to-cart" data-book="1984">
+                                <i class="fas fa-cart-plus me-2"></i>Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card book-card h-100">
+                        <div class="card-body text-center">
+                            <div class="book-emoji">📓</div>
+                            <h5 class="card-title fw-bold">L'Étranger</h5>
+                            <p class="card-text text-muted">Albert Camus</p>
+                            <p class="book-price mb-3">13,75 €</p>
+                            <button class="btn btn-success btn-add-to-cart" data-book="L'Étranger">
+                                <i class="fas fa-cart-plus me-2"></i>Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </article>
-          <article role="listitem">
-            <img
-              src="images/films/forrest_gump.jpg"
-              alt="Affiche de Forrest Gump"
-            />
-            <h3>Forrest Gump</h3>
-            <ul class="meta">
-              <li>1994</li>
-              <li>2h22</li>
-              <li>⭐ 4.4/5</li>
-              <li>Drama, Romance</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions Forrest Gump">
-              <button aria-label="Lire Forrest Gump">Lecture</button>
-              <button aria-label="Plus d'informations sur Forrest Gump">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter Forrest Gump à ma liste">
-                Ma liste
-              </button>
-            </div>
-          </article>
         </div>
-      </section>
+    </section>
 
-      <section id="nouveautes" aria-labelledby="nouveautes-title" role="region">
-        <h2 id="nouveautes-title">Nouveautés</h2>
-        <div class="grid" role="list">
-          <article role="listitem">
-            <img
-              src="images/films/Interstellar_film_poster.jpg"
-              alt="Affiche de Interstellar"
-            />
-            <h3>Interstellar</h3>
-            <ul class="meta">
-              <li>2014</li>
-              <li>2h49</li>
-              <li>⭐ 4.7/5</li>
-              <li>Sci-Fi, Drama</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions Interstellar">
-              <button aria-label="Lire Interstellar">Lecture</button>
-              <button aria-label="Plus d'informations sur Interstellar">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter Interstellar à ma liste">
-                Ma liste
-              </button>
+    <section class="newsletter-section py-5 text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 class="display-6 fw-bold mb-3">Restez informé</h2>
+                    <p class="lead mb-4">Recevez nos dernières nouveautés par email</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control form-control-lg" 
+                                   placeholder="Votre adresse email" 
+                                   required>
+                            <button class="btn btn-danger btn-lg" type="submit">
+                                <i class="fas fa-envelope me-2"></i>S'abonner
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </article>
-          <article role="listitem">
-            <img
-              src="images/films/darknight.webp"
-              alt="Affiche de The Dark Knight"
-            />
-            <h3>The Dark Knight</h3>
-            <ul class="meta">
-              <li>2008</li>
-              <li>2h32</li>
-              <li>⭐ 4.8/5</li>
-              <li>Action, Crime, Drama</li>
-            </ul>
-            <div
-              class="actions"
-              role="group"
-              aria-label="Actions The Dark Knight"
-            >
-              <button aria-label="Lire The Dark Knight">Lecture</button>
-              <button aria-label="Plus d'informations sur The Dark Knight">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter The Dark Knight à ma liste">
-                Ma liste
-              </button>
-            </div>
-          </article>
-          <article role="listitem">
-            <img src="images/films/inception.webp" alt="Affiche de Inception" />
-            <h3>Inception</h3>
-            <ul class="meta">
-              <li>2010</li>
-              <li>2h28</li>
-              <li>⭐ 4.5/5</li>
-              <li>Sci-Fi, Thriller</li>
-            </ul>
-            <div class="actions" role="group" aria-label="Actions Inception">
-              <button aria-label="Lire Inception">Lecture</button>
-              <button aria-label="Plus d'informations sur Inception">
-                Plus d'infos
-              </button>
-              <button aria-label="Ajouter Inception à ma liste">
-                Ma liste
-              </button>
-            </div>
-          </article>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <footer role="contentinfo">
-      <nav aria-label="Liens utiles">
-        <ul>
-          <li><a href="#">Conditions d'utilisation</a></li>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">Aide</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="socials" aria-label="Réseaux sociaux">
-        <ul>
-          <li>
-            <a href="#" aria-label="Instagram (lien factice)">Instagram</a>
-          </li>
-          <li><a href="#" aria-label="Twitter (lien factice)">Twitter</a></li>
-          <li><a href="#" aria-label="Facebook (lien factice)">Facebook</a></li>
-        </ul>
-      </div>
-      <p>&copy; 2024 Streamflix. Tous droits réservés.</p>
+    <footer class="footer py-4 text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-book me-2"></i>BookStore
+                    </h5>
+                    <p class="text-light">Votre librairie de confiance depuis 2020</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none">Mentions légales</a></li>
+                        <li><a href="#" class="text-decoration-none">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-decoration-none">Livraison</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="mailto:contact@bookstore.fr" class="text-decoration-none">contact@bookstore.fr</a>
+                    </p>
+                    <p class="mb-0">
+                        <i class="fas fa-phone me-2"></i>
+                        <a href="tel:0123456789" class="text-decoration-none">01 23 45 67 89</a>
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <small>&copy; 2025 BookStore. Tous droits réservés.</small>
+            </div>
+        </div>
     </footer>
-  </body>
+
+    <div id="cartAlert" class="cart-alert" style="display: none;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle me-2"></i>
+            <strong>Ajouté au panier !</strong> <span id="bookName"></span> a été ajouté à votre panier.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    
+</body>
 </html>
