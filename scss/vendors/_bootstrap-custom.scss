@@ -1,0 +1,38 @@
+@import '../utils/variables';
+
+// Variables CSS personnalisées pour Bootstrap
+:root {
+  --primary-color: #{$primary-color};
+  --primary-hover: #{$primary-hover};
+  --secondary-color: #{$secondary-color};
+  --background-color: #{$background-color};
+  --background-secondary: #{$background-secondary};
+  --card-background: #{$card-background};
+  --card-hover: #{$card-hover};
+  --text-color: #{$text-color};
+  --text-secondary: #{$text-secondary};
+  --overlay-dark: #{$overlay-dark};
+  --overlay-gradient: #{$overlay-gradient};
+  
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --transition-fast: #{$transition-fast};
+  --transition-smooth: #{$transition-smooth};
+  --transition-bounce: #{$transition-bounce};
+  
+  --border-radius-sm: #{$border-radius-sm};
+  --border-radius-md: #{$border-radius-md};
+  --border-radius-lg: #{$border-radius-lg};
+}
+
+// Variables Bootstrap personnalisées
+:root {
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb: #{$bs-primary-rgb};
+  --bs-dark: var(--background-color);
+  --bs-dark-rgb: #{$bs-dark-rgb};
+  --bs-body-bg: var(--background-color);
+  --bs-body-color: var(--text-color);
+  --bs-secondary: #{$bs-secondary};
+}

@@ -1,0 +1,152 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+// Styles de base pour les titres
+h1, h2, h3, h4, h5, h6 {
+  color: $text-color;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  
+  @include mobile {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+  
+  @include mobile {
+    font-size: 1.25rem;
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Paragraphes
+p {
+  margin-bottom: 1rem;
+  line-height: $line-height-base;
+  color: $text-color;
+}
+
+.lead {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $text-secondary;
+}
+
+.text-secondary {
+  color: $text-secondary !important;
+}
+
+// Texte muted (déjà défini dans reset mais on reprend ici pour s'assurer de la couleur)
+.text-muted {
+  color: $text-secondary !important;
+}
+
+// Classes utilitaires pour le texte
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+// Styles spéciaux
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Métadonnées (utilisées dans les cartes de films)
+.meta {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  
+  small {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $text-secondary;
+    margin-bottom: 0.25rem;
+  }
+  
+  strong {
+    color: $text-color;
+    font-weight: 600;
+  }
+}

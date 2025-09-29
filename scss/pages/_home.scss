@@ -1,0 +1,15 @@
+@import '../utils/variables';
+
+// Styles généraux des sections
+section {
+  padding: 3rem 0;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+  
+  h2 {
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+}

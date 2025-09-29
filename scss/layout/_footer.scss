@@ -1,0 +1,35 @@
+@import '../utils/variables';
+
+// Footer principal
+footer {
+  background: $background-secondary !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+  h6 {
+    color: $text-color;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+  }
+  
+  a {
+    transition: $transition-fast;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: $text-color;
+    
+    &:hover {
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}

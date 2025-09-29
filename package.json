@@ -1,0 +1,19 @@
+{
+  "name": "streamflix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}

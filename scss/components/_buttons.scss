@@ -1,0 +1,68 @@
+@import '../utils/variables';
+
+// Boutons généraux
+.btn {
+  font-weight: 600;
+  transition: $transition-bounce;
+  min-width: 120px;
+  
+  @media (max-width: 767.98px) {
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+// Bouton primaire
+.btn-primary {
+  &:hover {
+    background: $primary-hover;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Bouton outline light
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+// Boutons dans les overlays de cartes
+.card-overlay {
+  .btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-bounce;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Boutons du footer
+footer {
+  .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: $text-color;
+    
+    &:hover {
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}

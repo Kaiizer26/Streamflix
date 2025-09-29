@@ -1,0 +1,40 @@
+// Couleurs principales
+$primary-color: #e50914;
+$primary-hover: #f40612;
+$secondary-color: #ffffff;
+$background-color: #141414;
+$background-secondary: #0f0f0f;
+$card-background: #181818;
+$card-hover: #2a2a2a;
+$text-color: #ffffff;
+$text-secondary: #e0e0e0;
+$overlay-dark: rgba(0, 0, 0, 0.8);
+$overlay-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+
+// Ombres
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+// Transitions
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+
+// Bootstrap overrides
+$bs-primary: $primary-color;
+$bs-primary-rgb: 229, 9, 20;
+$bs-dark: $background-color;
+$bs-dark-rgb: 20, 20, 20;
+$bs-body-bg: $background-color;
+$bs-body-color: $text-color;
+$bs-secondary: #6c757d;
+
+// Typography
+$font-family-base: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
+$line-height-base: 1.6;

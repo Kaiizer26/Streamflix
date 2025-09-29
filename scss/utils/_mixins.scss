@@ -1,0 +1,121 @@
+@import 'variables';
+
+// Mixin pour les transitions
+@mixin transition($property: all, $duration: $transition-smooth, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Mixin pour les ombres
+@mixin shadow($level: 'md') {
+  @if $level == 'sm' {
+    box-shadow: $shadow-sm;
+  } @else if $level == 'md' {
+    box-shadow: $shadow-md;
+  } @else if $level == 'lg' {
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Mixin pour les transformations hover
+@mixin hover-transform($scale: 1.05, $translateY: -2px) {
+  transition: $transition-smooth;
+  
+  &:hover {
+    transform: translateY($translateY) scale($scale);
+  }
+}
+
+// Mixin pour les overlays
+@mixin overlay($color: $overlay-dark) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $color;
+}
+
+// Mixin pour les gradients
+@mixin gradient-overlay($direction: 180deg, $start: rgba(0, 0, 0, 0.7), $middle: rgba(0, 0, 0, 0.3), $end: rgba(0, 0, 0, 0.8)) {
+  background: linear-gradient($direction, $start 0%, $middle 50%, $end 100%);
+}
+
+// Mixin pour les boutons
+@mixin button-style($bg-color: $primary-color, $hover-color: $primary-hover, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: $transition-bounce;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px) scale(1.02);
+    @include shadow('md');
+  }
+}
+
+// Mixin pour les cartes
+@mixin card-style {
+  background: $card-background;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  @include shadow('md');
+  @include transition();
+  
+  &:hover {
+    background: $card-hover;
+    transform: translateY(-5px);
+    @include shadow('lg');
+  }
+}
+
+// Mixin pour les media queries
+@mixin mobile {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// Mixin pour le texte tronqué
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Mixin pour le centrage flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Mixin pour les animations d'apparition
+@mixin fade-in-animation($delay: 0s) {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: $delay;
+}

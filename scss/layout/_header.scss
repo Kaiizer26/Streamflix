@@ -1,0 +1,10 @@
+@import '../utils/variables';
+
+// Marge principale pour éviter le chevauchement avec la navbar fixe
+main {
+  margin-top: 76px;
+  
+  @media (max-width: 767.98px) {
+    margin-top: 56px;
+  }
+}

@@ -1,0 +1,72 @@
+@import '../utils/variables';
+
+// Reset de base
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: $line-height-base;
+  overflow-x: hidden;
+}
+
+// Styles de base pour les liens
+a {
+  color: $text-color;
+  text-decoration: none;
+  
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Couleurs héritées pour les éléments de texte
+p, div, span, a, small, strong {
+  color: inherit;
+}
+
+// Classe utilitaire pour le texte muted
+.text-muted {
+  color: $text-secondary !important;
+}
+
+// Styles spécifiques pour les liens du footer
+footer a.text-muted {
+  color: $text-secondary !important;
+  
+  &:hover {
+    color: $text-color !important;
+  }
+}
+
+// Scrollbar personnalisée
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 4px;
+  
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+// Focus styles
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+}

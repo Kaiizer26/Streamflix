@@ -1,0 +1,113 @@
+@import '../utils/variables';
+
+// Navbar principale
+.navbar {
+  background: linear-gradient(180deg, $background-color 0%, transparent 100%);
+  transition: $transition-smooth;
+  padding: 0.5rem 0;
+  backdrop-filter: blur(10px);
+  
+  &.scrolled {
+    background-color: $background-color !important;
+    box-shadow: $shadow-md;
+  }
+}
+
+// Logo de la navbar
+.navbar-brand {
+  .logo {
+    height: 64px;
+    transition: $transition-smooth;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 767.98px) {
+      height: 28px;
+    }
+  }
+}
+
+// Navigation links
+.navbar-nav {
+  .nav-link {
+    color: $text-color !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: $border-radius-md;
+    transition: $transition-smooth;
+    position: relative;
+    
+    &:hover,
+    &.active {
+      color: $primary-color !important;
+      background: rgba(229, 9, 20, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    &.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: $primary-color;
+      border-radius: 1px;
+    }
+  }
+}
+
+// Barre de recherche
+.recherche {
+  .form-control {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid transparent;
+    color: $text-color;
+    transition: $transition-smooth;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    
+    &:focus {
+      background: rgba(0, 0, 0, 0.9);
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+      color: $text-color;
+    }
+    
+    @media (max-width: 767.98px) {
+      max-width: 150px;
+    }
+    
+    @media (min-width: 768px) and (max-width: 1023.98px) {
+      width: 180px;
+    }
+  }
+  
+  .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
+}
+
+// Menu profil dropdown
+.profile-menu {
+  .dropdown-menu {
+    background: $card-background;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: $shadow-lg;
+  }
+  
+  .dropdown-item {
+    color: $text-color;
+    transition: $transition-fast;
+    
+    &:hover {
+      background: $card-hover;
+      color: $primary-color;
+    }
+  }
+}
