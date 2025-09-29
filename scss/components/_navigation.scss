@@ -24,6 +24,10 @@
     }
     
     @media (max-width: 767.98px) {
+      height: 32px; // Légèrement plus grand pour une meilleure visibilité
+    }
+    
+    @media (max-width: 575.98px) {
       height: 28px;
     }
   }
@@ -81,6 +85,11 @@
       max-width: 150px;
     }
     
+    @media (max-width: 575.98px) {
+      max-width: 120px;
+      font-size: 0.875rem;
+    }
+    
     @media (min-width: 768px) and (max-width: 1023.98px) {
       width: 180px;
     }
@@ -90,6 +99,10 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: none;
+    
+    @media (max-width: 575.98px) {
+      padding: 0.375rem 0.5rem;
+    }
   }
 }
 

@@ -10,9 +10,17 @@
   overflow: hidden;
   
   @media (max-width: 767.98px) {
-    height: 60vh;
-    min-height: 500px;
+    height: auto;
+    min-height: 400px;
     text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  @media (max-width: 575.98px) {
+    min-height: 350px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   
   // Overlay gradient
@@ -33,6 +41,10 @@
     
     @media (max-width: 767.98px) {
       padding: 1rem 0;
+    }
+    
+    @media (max-width: 575.98px) {
+      padding: 0.5rem 0;
     }
   }
   
@@ -56,6 +68,11 @@
     
     @media (max-width: 767.98px) {
       justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (max-width: 575.98px) {
+      margin-bottom: 1rem;
     }
     
     small {
@@ -64,10 +81,18 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: $text-secondary;
+      
+      @media (max-width: 575.98px) {
+        font-size: 0.7rem;
+      }
     }
     
     strong {
       color: $text-color;
+      
+      @media (max-width: 575.98px) {
+        font-size: 0.9rem;
+      }
     }
   }
   
@@ -80,10 +105,15 @@
       font-weight: 600;
       transition: $transition-bounce;
       min-width: 120px;
+      
+      @media (max-width: 575.98px) {
+        min-width: 100px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
     }
     
     .btn-primary:hover {
-      background: $primary-hover;
       transform: translateY(-3px) scale(1.05);
       box-shadow: $shadow-lg;
     }
@@ -133,9 +163,14 @@
   }
   
   @media (max-width: 767.98px) {
-    max-width: 250px;
-    margin: 0 auto 2rem;
+    max-width: 200px;
+    margin: 0 auto 1.5rem;
     transform: none;
+  }
+  
+  @media (max-width: 575.98px) {
+    max-width: 180px;
+    margin: 0 auto 1rem;
   }
   
   @media (min-width: 768px) and (max-width: 1023.98px) {

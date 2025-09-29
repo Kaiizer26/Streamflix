@@ -5,6 +5,10 @@ main {
   margin-top: 76px;
   
   @media (max-width: 767.98px) {
-    margin-top: 56px;
+    margin-top: 70px; // Augmenté pour éviter le chevauchement
+  }
+  
+  @media (max-width: 575.98px) {
+    margin-top: 80px; // Encore plus d'espace sur très petits écrans
   }
 }

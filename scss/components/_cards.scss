@@ -52,6 +52,10 @@
       height: 300px;
     }
     
+    @media (max-width: 575.98px) {
+      height: 250px;
+    }
+    
     @media (min-width: 768px) and (max-width: 1023.98px) {
       height: 350px;
     }

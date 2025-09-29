@@ -8,8 +8,17 @@ section {
     padding: 2rem 0;
   }
   
+  @media (max-width: 575.98px) {
+    padding: 1.5rem 0;
+  }
+  
   h2 {
     color: $text-color;
     margin-bottom: 2rem;
+    
+    @media (max-width: 575.98px) {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
   }
 }
