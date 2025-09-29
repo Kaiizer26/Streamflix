@@ -1,0 +1,256 @@
+// ==========================================================================
+// TYPOGRAPHIE - BOOKSTORE
+// ==========================================================================
+
+// STYLES DE BASE
+// ==============
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  color: $gray-800;
+}
+
+// TITRES
+// ======
+h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-small;
+  margin-bottom: $spacing-md;
+  color: $primary-color;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+  margin-bottom: $spacing-lg;
+  color: $white;
+  
+  @include respond-to(md) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: $font-size-xl;
+  
+  @include respond-to(md) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: $font-size-large;
+  
+  @include respond-to(md) {
+    font-size: 1.5rem;
+  }
+}
+
+h4 {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+}
+
+h5 {
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+}
+
+h6 {
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// PARAGRAPHES
+// ===========
+p {
+  margin-bottom: $spacing-md;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  &.lead {
+    font-size: $font-size-large;
+    font-weight: $font-weight-light;
+    line-height: $line-height-large;
+    color: $gray-700;
+  }
+  
+  &.small {
+    font-size: $font-size-small;
+    color: $gray-600;
+  }
+}
+
+// LIENS
+// =====
+a {
+  color: $accent-color;
+  transition: $transition-base;
+  
+  &:hover,
+  &:focus {
+    color: $accent-dark;
+    text-decoration: underline;
+  }
+  
+  &.link-primary {
+    color: $primary-color;
+    
+    &:hover,
+    &:focus {
+      color: $primary-dark;
+    }
+  }
+  
+  &.link-unstyled {
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+// LISTES
+// ======
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-lg;
+  
+  li {
+    margin-bottom: $spacing-xs;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &.list-unstyled {
+    @include reset-list;
+  }
+  
+  &.list-inline {
+    @include reset-list;
+    
+    li {
+      display: inline-block;
+      margin-right: $spacing-md;
+      margin-bottom: 0;
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// ÉLÉMENTS INLINE
+// ===============
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: $font-size-small;
+  color: $gray-600;
+}
+
+mark {
+  background-color: rgba($warning-color, 0.3);
+  padding: 2px 4px;
+  border-radius: $border-radius-sm;
+}
+
+code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875em;
+  background-color: $gray-100;
+  color: $gray-800;
+  padding: 2px 6px;
+  border-radius: $border-radius-sm;
+}
+
+// BLOCKQUOTES
+// ===========
+blockquote {
+  margin: $spacing-lg 0;
+  padding: $spacing-md $spacing-lg;
+  border-left: 4px solid $accent-color;
+  background-color: $gray-100;
+  border-radius: $border-radius-md;
+  
+  p {
+    margin-bottom: $spacing-sm;
+    font-style: italic;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  footer {
+    font-size: $font-size-small;
+    color: $gray-600;
+    margin-top: $spacing-sm;
+    
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+// CLASSES UTILITAIRES TYPOGRAPHIQUES
+// ===================================
+.text-primary { color: $primary-color !important; }
+.text-secondary { color: $secondary-color !important; }
+.text-success { color: $success-color !important; }
+.text-danger { color: $danger-color !important; }
+.text-warning { color: $warning-color !important; }
+.text-info { color: $info-color !important; }
+.text-muted { color: $gray-600 !important; }
+
+.font-weight-light { font-weight: $font-weight-light !important; }
+.font-weight-normal { font-weight: $font-weight-normal !important; }
+.font-weight-medium { font-weight: $font-weight-medium !important; }
+.font-weight-semibold { font-weight: $font-weight-semibold !important; }
+.font-weight-bold { font-weight: $font-weight-bold !important; }
+
+.text-uppercase { text-transform: uppercase !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+@include respond-to(md) {
+  .text-md-center { text-align: center !important; }
+  .text-md-left { text-align: left !important; }
+  .text-md-right { text-align: right !important; }
+}
+
+// RESPONSIVE TYPOGRAPHY
+// =====================
+@include respond-to(sm) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  .lead { font-size: 1.1rem; }
+}
+
+@include respond-to(lg) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.2rem; }
+  .lead { font-size: 1.3rem; }
+}

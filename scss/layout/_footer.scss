@@ -1,0 +1,381 @@
+// ==========================================================================
+// LAYOUT FOOTER - BOOKSTORE
+// ==========================================================================
+
+// FOOTER PRINCIPAL
+// ================
+.footer {
+  background: linear-gradient(135deg, $primary-dark 0%, $black 100%);
+  color: $white;
+  padding: $spacing-xxl 0 $spacing-lg;
+  margin-top: auto;
+  
+  a {
+    color: rgba($white, 0.8);
+    text-decoration: none;
+    transition: $transition-base;
+    
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+// CONTENU FOOTER
+// ==============
+.footer-content {
+  .footer-brand {
+    h5 {
+      color: $white;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-md;
+      
+      i {
+        color: $accent-color;
+        margin-right: $spacing-xs;
+      }
+    }
+    
+    p {
+      color: rgba($white, 0.7);
+      line-height: $line-height-large;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: $spacing-md;
+      
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba($white, 0.1);
+        border-radius: 50%;
+        color: $white;
+        font-size: $font-size-large;
+        transition: $transition-base;
+        
+        &:hover {
+          background: $accent-color;
+          transform: translateY(-2px);
+          text-decoration: none;
+        }
+        
+        &.facebook:hover { background: #3b5998; }
+        &.twitter:hover { background: #1da1f2; }
+        &.instagram:hover { background: #e1306c; }
+        &.linkedin:hover { background: #0077b5; }
+      }
+    }
+  }
+}
+
+// LIENS FOOTER
+// ============
+.footer-links {
+  h5 {
+    color: $white;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+    font-size: $font-size-base;
+  }
+  
+  ul {
+    @include reset-list;
+    
+    li {
+      margin-bottom: $spacing-sm;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      a {
+        display: flex;
+        align-items: center;
+        padding: $spacing-xs 0;
+        
+        i {
+          width: 16px;
+          margin-right: $spacing-xs;
+          color: $accent-color;
+        }
+        
+        &:hover {
+          padding-left: $spacing-xs;
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+// NEWSLETTER FOOTER
+// =================
+.footer-newsletter {
+  h5 {
+    color: $white;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    color: rgba($white, 0.7);
+    margin-bottom: $spacing-lg;
+    line-height: $line-height-large;
+  }
+  
+  .newsletter-form {
+    .input-group {
+      .form-control {
+        background: rgba($white, 0.1);
+        border: 1px solid rgba($white, 0.2);
+        color: $white;
+        border-radius: $border-radius-md 0 0 $border-radius-md;
+        
+        &::placeholder {
+          color: rgba($white, 0.6);
+        }
+        
+        &:focus {
+          background: rgba($white, 0.15);
+          border-color: $accent-color;
+          color: $white;
+          box-shadow: none;
+        }
+      }
+      
+      .btn {
+        border-radius: 0 $border-radius-md $border-radius-md 0;
+        border: none;
+        background: $accent-color;
+        color: $white;
+        font-weight: $font-weight-semibold;
+        
+        &:hover {
+          background: $accent-dark;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+// SECTION NEWSLETTER SÉPARÉE
+// ==========================
+.newsletter-section {
+  background: linear-gradient(135deg, $secondary-color 0%, $danger-color 100%);
+  color: $white;
+  padding: $spacing-xxl 0;
+  
+  .newsletter-form {
+    .input-group {
+      max-width: 500px;
+      margin: 0 auto;
+      
+      .form-control {
+        padding: $spacing-lg;
+        border: none;
+        border-radius: $border-radius-lg 0 0 $border-radius-lg;
+        font-size: $font-size-base;
+        
+        &:focus {
+          box-shadow: 0 0 0 3px rgba($white, 0.2);
+        }
+      }
+      
+      .btn {
+        padding: $spacing-lg $spacing-xl;
+        border-radius: 0 $border-radius-lg $border-radius-lg 0;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+// FOOTER BOTTOM
+// =============
+.footer-bottom {
+  border-top: 1px solid rgba($white, 0.1);
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  text-align: center;
+  
+  .footer-copyright {
+    color: rgba($white, 0.6);
+    font-size: $font-size-small;
+    margin-bottom: $spacing-md;
+    
+    @include respond-to(md) {
+      margin-bottom: 0;
+    }
+  }
+  
+  .footer-bottom-links {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+    
+    a {
+      color: rgba($white, 0.6);
+      font-size: $font-size-small;
+      
+      &:hover {
+        color: $accent-color;
+      }
+    }
+    
+    @include respond-to(md) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// FOOTER AVEC PARALLAX
+// ====================
+.footer-parallax {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23fff"></path></svg>');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-top: $spacing-xxl * 2;
+}
+
+// CONTACT INFO FOOTER
+// ===================
+.footer-contact {
+  h5 {
+    color: $white;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $spacing-md;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    i {
+      width: 20px;
+      color: $accent-color;
+      margin-right: $spacing-sm;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .contact-info {
+      color: rgba($white, 0.8);
+      line-height: $line-height-base;
+      
+      a {
+        color: inherit;
+        
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+// FOOTER RESPONSIVE
+// =================
+@include respond-to(md) {
+  .footer {
+    .row {
+      text-align: left;
+    }
+    
+    .footer-content .social-links {
+      justify-content: flex-start;
+    }
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@include respond-to(sm) {
+  .footer {
+    padding: $spacing-xl 0 $spacing-md;
+    text-align: center;
+    
+    .col-lg-4,
+    .col-md-6 {
+      margin-bottom: $spacing-xl;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .footer-content .social-links {
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    
+    .footer-bottom-links {
+      margin-top: $spacing-md;
+    }
+  }
+}
+
+// BACK TO TOP BUTTON
+// ==================
+.back-to-top {
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  width: 50px;
+  height: 50px;
+  background: $accent-color;
+  color: $white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-large;
+  cursor: pointer;
+  transition: $transition-base;
+  opacity: 0;
+  visibility: hidden;
+  z-index: $z-fixed;
+  box-shadow: $shadow-lg;
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &:hover {
+    background: $accent-dark;
+    transform: translateY(-3px);
+    box-shadow: $shadow-xl;
+  }
+  
+  @include respond-to(sm) {
+    bottom: $spacing-lg;
+    right: $spacing-lg;
+    width: 45px;
+    height: 45px;
+  }
+}

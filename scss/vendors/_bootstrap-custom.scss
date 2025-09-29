@@ -1,0 +1,201 @@
+// ==========================================================================
+// PERSONNALISATION BOOTSTRAP - BOOKSTORE
+// ==========================================================================
+
+// SURCHARGE DES VARIABLES BOOTSTRAP
+// ==================================
+
+// Couleurs principales Bootstrap
+$primary: #2c3e50;
+$secondary: #95a5a6;
+$success: #27ae60;
+$info: #3498db;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: #ecf0f1;
+$dark: #2c3e50;
+
+// Couleurs de fond
+$body-bg: #ffffff;
+$body-color: #2c3e50;
+
+// Typographie Bootstrap
+$font-family-sans-serif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+
+// Espacements Bootstrap
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5
+);
+
+// Bordures et rayons
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+
+// Ombres Bootstrap
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Navigation
+$navbar-padding-y: 1rem;
+$navbar-padding-x: 1rem;
+$navbar-brand-font-size: 1.5rem;
+$navbar-brand-font-weight: 700;
+
+// Boutons
+$btn-border-radius: $border-radius;
+$btn-border-radius-sm: $border-radius-sm;
+$btn-border-radius-lg: $border-radius-lg;
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+$btn-font-weight: 600;
+
+// Cartes
+$card-border-radius: $border-radius-lg;
+$card-border-width: 0;
+$card-box-shadow: $box-shadow;
+$card-cap-bg: transparent;
+
+// Conteneurs
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Transitions
+$transition-base: all .3s ease-in-out;
+$transition-fade: opacity .15s linear;
+$transition-collapse: height .35s ease;
+
+// Formulaires
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-border-radius: $border-radius;
+$input-focus-border-color: lighten($primary, 25%);
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+
+// STYLES PERSONNALISÉS BOOTSTRAP
+// ===============================
+
+// Boutons personnalisés
+.btn {
+  transition: $transition-base;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Cartes avec animation
+.card {
+  transition: $transition-base;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+// Navigation avec backdrop-filter
+.navbar {
+  backdrop-filter: blur(10px);
+  
+  .navbar-brand {
+    font-weight: $navbar-brand-font-weight;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    transition: $transition-base;
+    
+    &:hover {
+      color: lighten($primary, 20%) !important;
+    }
+  }
+}
+
+// Utilitaires personnalisés
+.bg-gradient-primary {
+  background: linear-gradient(135deg, $primary 0%, lighten($primary, 15%) 100%) !important;
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, $secondary 0%, lighten($secondary, 15%) 100%) !important;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, $primary, $info);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Animations personnalisées
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Responsive utilities
+@each $breakpoint in (xs, sm, md, lg, xl, xxl) {
+  @include respond-to($breakpoint) {
+    .text-#{$breakpoint}-center {
+      text-align: center !important;
+    }
+    
+    .text-#{$breakpoint}-left {
+      text-align: left !important;
+    }
+    
+    .text-#{$breakpoint}-right {
+      text-align: right !important;
+    }
+  }
+}

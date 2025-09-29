@@ -1,0 +1,154 @@
+// ==========================================================================
+// MIXINS SASS - BOOKSTORE
+// ==========================================================================
+
+// MIXIN RESPONSIVE
+// ================
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: #{$breakpoint-xs}) { @content; }
+  }
+  @if $breakpoint == sm {
+    @media (min-width: #{$breakpoint-sm}) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (min-width: #{$breakpoint-md}) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-lg}) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: #{$breakpoint-xl}) { @content; }
+  }
+  @if $breakpoint == xxl {
+    @media (min-width: #{$breakpoint-xxl}) { @content; }
+  }
+}
+
+// MIXIN BOUTON PERSONNALISÉ
+// =========================
+@mixin custom-button($bg-color, $text-color: $white, $hover-bg: null) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: 2px solid transparent;
+  border-radius: $border-radius-md;
+  padding: $spacing-sm $spacing-lg;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  display: inline-block;
+  transition: $transition-base;
+  cursor: pointer;
+  
+  @if $hover-bg == null {
+    $hover-bg: darken($bg-color, 10%);
+  }
+  
+  &:hover,
+  &:focus {
+    background-color: $hover-bg;
+    color: $text-color;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+  
+  &:disabled {
+    background-color: $gray-400;
+    color: $gray-600;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    
+    &:hover {
+      background-color: $gray-400;
+      transform: none;
+    }
+  }
+}
+
+// MIXIN CARTE
+// ===========
+@mixin card-style($bg-color: $white, $shadow: $shadow-sm) {
+  background-color: $bg-color;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow;
+  padding: $spacing-lg;
+  transition: $transition-base;
+  
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+}
+
+// MIXIN CENTRAGE FLEXBOX
+// ======================
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// MIXIN GRADIENT
+// ==============
+@mixin gradient($start-color, $end-color, $direction: to bottom) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
+
+// MIXIN TRUNCATE TEXT
+// ===================
+@mixin truncate($max-width: 100%) {
+  max-width: $max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// MIXIN ANIMATION FADE IN
+// =======================
+@mixin fade-in($duration: 0.3s, $delay: 0s) {
+  opacity: 0;
+  animation: fadeIn $duration ease-in-out $delay forwards;
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+// MIXIN RESET LIST
+// ================
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// MIXIN VISUALLY HIDDEN
+// =====================
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+// MIXIN CLEARFIX
+// ==============
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

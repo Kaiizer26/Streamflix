@@ -1,0 +1,33 @@
+// ==========================================================================
+// ARCHITECTURE SASS 7-1 - BOOKSTORE
+// ==========================================================================
+
+// 1. UTILS
+// --------
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// 2. VENDORS
+// ----------
+@import 'vendors/bootstrap-custom';
+
+// 3. BASE
+// -------
+@import 'base/reset';
+@import 'base/typography';
+
+// 4. COMPONENTS
+// -------------
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/navigation';
+
+// 5. LAYOUT
+// ---------
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/footer';
+
+// 6. PAGES
+// --------
+@import 'pages/home';

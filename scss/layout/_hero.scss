@@ -1,0 +1,361 @@
+// ==========================================================================
+// LAYOUT HERO - BOOKSTORE
+// ==========================================================================
+
+// SECTION HERO PRINCIPALE
+// =======================
+.hero-section {
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 50%, $accent-color 100%);
+  color: $white;
+  padding: $spacing-xxl * 2 0 $spacing-xxl;
+  position: relative;
+  overflow: hidden;
+  
+  // Effet de fond avec patterns
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba($white, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba($accent-color, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba($white, 0.05) 0%, transparent 50%);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @include respond-to(md) {
+    padding: $spacing-xxl * 3 0 $spacing-xxl * 2;
+  }
+}
+
+// CONTENU HERO
+// ============
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-lg;
+  text-shadow: 0 2px 4px rgba($black, 0.3);
+  
+  @include respond-to(sm) {
+    font-size: 2rem;
+  }
+  
+  @include respond-to(md) {
+    font-size: 3.5rem;
+  }
+  
+  @include respond-to(lg) {
+    font-size: 4rem;
+  }
+}
+
+.hero-description {
+  font-size: $font-size-large;
+  font-weight: $font-weight-light;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto $spacing-xl;
+  line-height: $line-height-large;
+  
+  @include respond-to(md) {
+    font-size: 1.3rem;
+  }
+}
+
+// BOUTONS HERO
+// ============
+.hero-buttons {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: $spacing-xl;
+  
+  .btn {
+    font-size: $font-size-large;
+    padding: $spacing-lg $spacing-xl * 1.5;
+    border-radius: $border-radius-xl;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: $shadow-lg;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadow-xl;
+    }
+  }
+  
+  @include respond-to(sm) {
+    flex-direction: column;
+    align-items: center;
+    
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
+// HERO AVEC IMAGE
+// ===============
+.hero-with-image {
+  .row {
+    align-items: center;
+    min-height: 60vh;
+  }
+  
+  .hero-content {
+    @include respond-to(lg) {
+      text-align: center;
+      margin-bottom: $spacing-xl;
+    }
+  }
+  
+  .hero-image {
+    text-align: center;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: $border-radius-xl;
+      box-shadow: $shadow-xl;
+      transition: $transition-base;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+    
+    @include respond-to(lg) {
+      margin-top: $spacing-xl;
+    }
+  }
+}
+
+// HERO MINIMALISTE
+// ================
+.hero-minimal {
+  background: $white;
+  color: $gray-800;
+  padding: $spacing-xxl 0;
+  
+  .hero-title {
+    color: $primary-color;
+    text-shadow: none;
+  }
+  
+  .hero-description {
+    color: $gray-600;
+  }
+}
+
+// HERO AVEC VIDÉO BACKGROUND
+// ==========================
+.hero-video {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.4);
+    z-index: -1;
+  }
+}
+
+// HERO AVEC PARALLAX
+// ==================
+.hero-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($primary-color, 0.8);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// HERO AVEC STATISTIQUES
+// ======================
+.hero-stats {
+  background: transparent;
+  padding: $spacing-xl 0;
+  border-top: 1px solid rgba($white, 0.2);
+  margin-top: $spacing-xl;
+  
+  .stat-item {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: $font-weight-bold;
+      color: $white;
+      line-height: 1;
+      margin-bottom: $spacing-sm;
+      
+      @include respond-to(md) {
+        font-size: 4rem;
+      }
+    }
+    
+    .stat-label {
+      font-size: $font-size-base;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: $font-weight-medium;
+    }
+  }
+  
+  @include respond-to(md) {
+    .stat-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ANIMATIONS HERO
+// ===============
+.hero-animated {
+  .hero-title {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .hero-description {
+    animation: fadeInUp 1s ease-out 0.3s both;
+  }
+  
+  .hero-buttons {
+    animation: fadeInUp 1s ease-out 0.6s both;
+  }
+  
+  .hero-image img {
+    animation: fadeInUp 1s ease-out 0.9s both;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// HERO RESPONSIVE
+// ===============
+@include respond-to(sm) {
+  .hero-section {
+    padding: $spacing-xxl 0;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+}
+
+@include respond-to(md) {
+  .hero-section {
+    padding: $spacing-xxl * 1.5 0;
+  }
+}
+
+// HERO AVEC SEARCH
+// ================
+.hero-search {
+  .search-form {
+    max-width: 600px;
+    margin: $spacing-xl auto 0;
+    position: relative;
+    
+    .search-input {
+      width: 100%;
+      padding: $spacing-lg $spacing-xl;
+      border: none;
+      border-radius: $border-radius-xl;
+      font-size: $font-size-large;
+      background: rgba($white, 0.95);
+      color: $gray-800;
+      box-shadow: $shadow-lg;
+      
+      &::placeholder {
+        color: $gray-500;
+      }
+      
+      &:focus {
+        outline: none;
+        background: $white;
+        box-shadow: $shadow-xl;
+      }
+    }
+    
+    .search-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $accent-color;
+      border: none;
+      color: $white;
+      padding: $spacing-md $spacing-lg;
+      border-radius: $border-radius-lg;
+      font-weight: $font-weight-semibold;
+      transition: $transition-base;
+      
+      &:hover {
+        background: $accent-dark;
+        transform: translateY(-50%) translateX(-2px);
+      }
+    }
+  }
+}

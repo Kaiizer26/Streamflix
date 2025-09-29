@@ -1,0 +1,113 @@
+// ==========================================================================
+// VARIABLES SASS - BOOKSTORE
+// ==========================================================================
+
+// COULEURS PRINCIPALES
+// ====================
+$primary-color: #2c3e50;
+$primary-dark: #1a252f;
+$primary-light: #34495e;
+
+$secondary-color: #e74c3c;
+$secondary-dark: #c0392b;
+$secondary-light: #e67e22;
+
+$accent-color: #3498db;
+$accent-dark: #2980b9;
+$accent-light: #5dade2;
+
+$success-color: #27ae60;
+$danger-color: #e74c3c;
+$warning-color: #f39c12;
+$info-color: #17a2b8;
+
+// COULEURS NEUTRES
+// ================
+$white: #ffffff;
+$black: #000000;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+
+// BREAKPOINTS
+// ===========
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// TYPOGRAPHIE
+// ===========
+$font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-secondary: Georgia, 'Times New Roman', Times, serif;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.6;
+$line-height-small: 1.4;
+$line-height-large: 1.8;
+
+// ESPACEMENTS
+// ===========
+$spacing-xs: 0.5rem;   // 8px
+$spacing-sm: 1rem;     // 16px
+$spacing-md: 1.5rem;   // 24px
+$spacing-lg: 2rem;     // 32px
+$spacing-xl: 3rem;     // 48px
+$spacing-xxl: 4rem;    // 64px
+
+// RAYONS DE BORDURE
+// =================
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+
+// OMBRES
+// ======
+$shadow-sm: 0 2px 4px rgba($black, 0.1);
+$shadow-md: 0 4px 8px rgba($black, 0.15);
+$shadow-lg: 0 8px 16px rgba($black, 0.2);
+$shadow-xl: 0 16px 32px rgba($black, 0.25);
+
+// BREAKPOINTS (Compatible Bootstrap)
+// ==================================
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// TRANSITIONS
+// ===========
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+$transition-slow: all 0.5s ease;
+
+// Z-INDEX
+// =======
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;

@@ -1,0 +1,513 @@
+// ==========================================================================
+// PAGE HOME - BOOKSTORE
+// ==========================================================================
+
+// SECTION LIVRES POPULAIRES
+// =========================
+.popular-books-section {
+  padding: $spacing-xxl 0;
+  background-color: $gray-100;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-xxl;
+    color: $primary-color;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: $accent-color;
+      border-radius: $border-radius-sm;
+    }
+  }
+  
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    
+    @include respond-to(md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+  
+  .view-all-btn {
+    text-align: center;
+    margin-top: $spacing-xl;
+    
+    .btn {
+      padding: $spacing-md $spacing-xxl;
+      font-size: $font-size-large;
+      border-radius: $border-radius-xl;
+    }
+  }
+}
+
+// SECTION FEATURES/AVANTAGES
+// ==========================
+.features-section {
+  padding: $spacing-xxl 0;
+  background-color: $white;
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-xl;
+    margin-top: $spacing-xl;
+  }
+  
+  .feature-item {
+    text-align: center;
+    padding: $spacing-xl $spacing-lg;
+    border-radius: $border-radius-lg;
+    transition: $transition-base;
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-lg;
+      background-color: $gray-100;
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto $spacing-lg;
+      font-size: 2rem;
+      color: $white;
+      
+      &.delivery {
+        background: linear-gradient(45deg, $success-color, lighten($success-color, 15%));
+      }
+      
+      &.support {
+        background: linear-gradient(45deg, $info-color, lighten($info-color, 15%));
+      }
+      
+      &.secure {
+        background: linear-gradient(45deg, $warning-color, lighten($warning-color, 15%));
+      }
+      
+      &.quality {
+        background: linear-gradient(45deg, $danger-color, lighten($danger-color, 15%));
+      }
+    }
+    
+    h4 {
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+      font-weight: $font-weight-semibold;
+    }
+    
+    p {
+      color: $gray-600;
+      line-height: $line-height-large;
+    }
+  }
+}
+
+// SECTION TESTIMONIALS
+// ====================
+.testimonials-section {
+  padding: $spacing-xxl 0;
+  @include gradient($primary-color, $primary-dark, 135deg);
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  h2 {
+    color: $white;
+    text-align: center;
+    margin-bottom: $spacing-xxl;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: $spacing-xl;
+    
+    @include respond-to(md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+  
+  .testimonial-card {
+    background-color: rgba($white, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius-xl;
+    padding: $spacing-xl;
+    border: 1px solid rgba($white, 0.2);
+    transition: $transition-base;
+    
+    &:hover {
+      transform: translateY(-6px);
+      background-color: rgba($white, 0.15);
+    }
+    
+    .quote {
+      font-size: $font-size-large;
+      font-style: italic;
+      line-height: $line-height-large;
+      margin-bottom: $spacing-lg;
+      position: relative;
+      
+      &::before {
+        content: '"';
+        font-size: 4rem;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        opacity: 0.3;
+        font-family: Georgia, serif;
+      }
+    }
+    
+    .author {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba($white, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-large;
+      }
+      
+      .author-info {
+        .name {
+          font-weight: $font-weight-semibold;
+          margin-bottom: $spacing-xs;
+        }
+        
+        .role {
+          font-size: $font-size-small;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+// SECTION STATISTIQUES
+// ====================
+.stats-section {
+  padding: $spacing-xl 0;
+  background-color: $gray-100;
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-lg;
+  }
+  
+  .stat-item {
+    text-align: center;
+    padding: $spacing-lg;
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      margin-bottom: $spacing-sm;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: $font-size-base;
+      color: $gray-600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// SECTION PARTENAIRES
+// ===================
+.partners-section {
+  padding: $spacing-xl 0;
+  background-color: $white;
+  text-align: center;
+  
+  h3 {
+    color: $gray-600;
+    margin-bottom: $spacing-xl;
+    font-weight: $font-weight-light;
+  }
+  
+  .partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xl;
+    flex-wrap: wrap;
+    
+    .partner-logo {
+      width: 120px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $gray-200;
+      border-radius: $border-radius-md;
+      opacity: 0.6;
+      transition: $transition-base;
+      
+      &:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      
+      img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+// SECTION CALL TO ACTION
+// ======================
+.cta-section {
+  padding: $spacing-xxl 0;
+  @include gradient($accent-color, $accent-dark, 135deg);
+  color: $white;
+  text-align: center;
+  
+  h2 {
+    color: $white;
+    margin-bottom: $spacing-lg;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  
+  p {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-xl;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+    
+    .btn {
+      padding: $spacing-lg ($spacing-xl * 1.5);
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: $border-radius-xl;
+      box-shadow: $shadow-lg;
+      
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-xl;
+      }
+    }
+  }
+}
+
+// ANIMATIONS GLOBALES HOME
+// =========================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes movePattern {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// STYLES SPÉCIFIQUES À LA PAGE D'ACCUEIL
+// =======================================
+.home-page {
+  .hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  // Animation des cartes en cascade
+  .book-card {
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation: fadeInUp 0.6s ease-out #{$i * 0.1}s both;
+      }
+    }
+  }
+  
+  // Section avec pattern animé
+  .cta-section {
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba($white, 0.05) 10px,
+        rgba($white, 0.05) 20px
+      );
+      animation: movePattern 20s linear infinite;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  
+  // Statistiques animées
+  .stats-section {
+    &.animate-counters {
+      .stat-number.counter {
+        opacity: 1;
+        animation: countUp 2s ease-out;
+      }
+    }
+  }
+}
+
+// RESPONSIVITÉ SPÉCIFIQUE HOME
+// ============================
+@include respond-to(lg) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include respond-to(md) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section {
+    .cta-title {
+      font-size: 2rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  }
+  
+  .partners-grid {
+    gap: $spacing-md;
+    
+    .partner-logo {
+      width: 100px;
+      height: 50px;
+    }
+  }
+}
+
+// INTERACTIONS SPÉCIALES
+// ======================
+.book-card {
+  cursor: pointer;
+  
+  &:hover {
+    .book-emoji {
+      animation: bounce 0.6s ease-in-out;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

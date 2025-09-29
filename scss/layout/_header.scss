@@ -1,0 +1,319 @@
+// ==========================================================================
+// LAYOUT HEADER - BOOKSTORE
+// ==========================================================================
+
+// HEADER PRINCIPAL
+// ================
+header {
+  position: relative;
+  z-index: $z-fixed;
+  
+  .navbar {
+    background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+    box-shadow: $shadow-md;
+    
+    @include respond-to(lg) {
+      padding: $spacing-lg 0;
+    }
+  }
+}
+
+// HEADER STICKY
+// =============
+.header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-sticky;
+  transition: $transition-base;
+  
+  &.scrolled {
+    background-color: rgba($primary-color, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: $shadow-lg;
+    
+    .navbar {
+      padding: $spacing-sm 0;
+    }
+    
+    .navbar-brand {
+      font-size: $font-size-large;
+    }
+  }
+}
+
+// HEADER TRANSPARENT
+// ==================
+.header-transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-fixed;
+  
+  .navbar {
+    background: transparent;
+    padding: $spacing-xl 0;
+    
+    .navbar-brand,
+    .nav-link {
+      color: $white !important;
+      text-shadow: 0 2px 4px rgba($black, 0.3);
+    }
+    
+    .nav-link {
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+// HEADER AVEC SEARCH BAR
+// ======================
+.header-search {
+  .search-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    
+    .search-input {
+      width: 100%;
+      padding: $spacing-sm $spacing-lg;
+      border: none;
+      border-radius: $border-radius-lg;
+      background-color: rgba($white, 0.1);
+      color: $white;
+      font-size: $font-size-base;
+      
+      &::placeholder {
+        color: rgba($white, 0.7);
+      }
+      
+      &:focus {
+        outline: none;
+        background-color: rgba($white, 0.2);
+        box-shadow: 0 0 0 2px rgba($white, 0.3);
+      }
+    }
+    
+    .search-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: $white;
+      padding: $spacing-xs;
+      cursor: pointer;
+      
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+  
+  @include respond-to(md) {
+    .search-container {
+      margin: $spacing-md 0;
+    }
+  }
+}
+
+// HEADER ACTIONS
+// ==============
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  
+  .action-btn {
+    position: relative;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: $font-size-large;
+    padding: $spacing-sm;
+    border-radius: $border-radius-md;
+    transition: $transition-base;
+    
+    &:hover {
+      background-color: rgba($white, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(25%, -25%);
+      background-color: $danger-color;
+      color: $white;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 50%;
+      min-width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// HEADER PROFILE
+// ==============
+.header-profile {
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    color: $white;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-lg;
+    transition: $transition-base;
+    
+    &:hover {
+      background-color: rgba($white, 0.1);
+    }
+    
+    &::after {
+      display: none;
+    }
+    
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid rgba($white, 0.3);
+    }
+  }
+  
+  .dropdown-menu {
+    border: none;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-xl;
+    padding: $spacing-sm 0;
+    min-width: 200px;
+    
+    .dropdown-item {
+      padding: $spacing-sm $spacing-lg;
+      transition: $transition-base;
+      
+      &:hover {
+        background-color: $gray-100;
+        color: $primary-color;
+      }
+      
+      i {
+        width: 20px;
+        margin-right: $spacing-sm;
+      }
+    }
+    
+    .dropdown-divider {
+      margin: $spacing-sm 0;
+      border-color: $gray-200;
+    }
+  }
+}
+
+// HEADER RESPONSIVE
+// =================
+@media (max-width: 767.98px) {
+  .header-actions {
+    flex-direction: column;
+    gap: $spacing-sm;
+    width: 100%;
+    margin-top: $spacing-md;
+  }
+
+  .header-search {
+    .search-container {
+      margin: $spacing-md 0;
+    }
+  }
+
+  .header-profile {
+    width: 100%;
+
+    .dropdown-toggle {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// ANIMATIONS HEADER
+// =================
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-animated {
+  animation: slideDown 0.5s ease-out;
+}
+
+// HEADER AVEC MEGA MENU
+// =====================
+.mega-menu {
+  .dropdown-menu {
+    width: 600px;
+    padding: $spacing-lg;
+    
+    .row {
+      margin: 0;
+    }
+    
+    .col {
+      padding: 0 $spacing-md;
+    }
+    
+    .menu-section {
+      h6 {
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-sm;
+        padding-bottom: $spacing-xs;
+        border-bottom: 1px solid $gray-200;
+      }
+      
+      .menu-item {
+        display: block;
+        padding: $spacing-xs $spacing-sm;
+        color: $gray-700;
+        text-decoration: none;
+        border-radius: $border-radius-sm;
+        transition: $transition-base;
+        
+        &:hover {
+          background-color: $gray-100;
+          color: $primary-color;
+          transform: translateX(4px);
+        }
+        
+        i {
+          width: 20px;
+          margin-right: $spacing-xs;
+          color: $accent-color;
+        }
+      }
+    }
+    
+    @include respond-to(md) {
+      width: 400px;
+      padding: $spacing-md;
+    }
+  }
+}

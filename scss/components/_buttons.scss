@@ -1,0 +1,216 @@
+// ==========================================================================
+// COMPOSANT BOUTONS - BOOKSTORE
+// ==========================================================================
+
+// BOUTONS PERSONNALISÉS
+// =====================
+.btn-custom {
+  @include custom-button($primary-color);
+  
+  &.btn-custom-secondary {
+    @include custom-button($secondary-color);
+  }
+  
+  &.btn-custom-accent {
+    @include custom-button($accent-color);
+  }
+  
+  &.btn-custom-outline {
+    @include custom-button(transparent, $primary-color);
+    border: 2px solid $primary-color;
+    
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+// AMÉLIORATIONS DES BOUTONS BOOTSTRAP
+// ===================================
+.btn {
+  font-weight: $font-weight-semibold;
+  border-radius: $border-radius-md;
+  transition: $transition-base;
+  position: relative;
+  overflow: hidden;
+  
+  // Animation au survol
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-sm;
+  }
+  
+  // Effet ondulation
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba($white, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    z-index: 1;
+  }
+  
+  &:active::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// TAILLES DE BOUTONS
+// ==================
+.btn-xs {
+  padding: $spacing-xs ($spacing-sm * 0.75);
+  font-size: $font-size-small;
+  border-radius: $border-radius-sm;
+}
+
+.btn-xl {
+  padding: $spacing-lg ($spacing-xl * 0.75);
+  font-size: $font-size-large;
+  border-radius: $border-radius-lg;
+}
+
+// BOUTONS SPÉCIAUX
+// ================
+.btn-gradient {
+  background: linear-gradient(45deg, $primary-color, $accent-color);
+  border: none;
+  color: $white;
+  
+  &:hover {
+    background: linear-gradient(45deg, $primary-dark, $accent-dark);
+    color: $white;
+  }
+}
+
+.btn-glass {
+  background: rgba($white, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba($white, 0.2);
+  color: $white;
+  
+  &:hover {
+    background: rgba($white, 0.2);
+    color: $white;
+  }
+}
+
+.btn-floating {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-lg;
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  z-index: $z-fixed;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+// GROUPES DE BOUTONS
+// ==================
+.btn-group-custom {
+  .btn {
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: $border-radius-md;
+      border-bottom-left-radius: $border-radius-md;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $border-radius-md;
+      border-bottom-right-radius: $border-radius-md;
+    }
+    
+    &:not(:last-child) {
+      border-right: 1px solid rgba($white, 0.2);
+    }
+  }
+}
+
+// BOUTONS AVEC ICÔNES
+// ===================
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  
+  i {
+    font-size: 1.1em;
+  }
+  
+  &.btn-icon-only {
+    gap: 0;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    
+    span {
+      @include visually-hidden;
+    }
+  }
+}
+
+// BOUTONS LOADING
+// ===============
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// BOUTONS RESPONSIVE
+// ==================
+@include respond-to(sm) {
+  .btn-responsive {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-small;
+  }
+}
+
+@include respond-to(md) {
+  .btn-responsive {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-base;
+  }
+}

@@ -1,0 +1,159 @@
+// ==========================================================================
+// RESET CSS - BOOKSTORE
+// ==========================================================================
+
+// RESET MODERNE
+// =============
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: $font-weight-normal;
+  color: $gray-800;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+// ÉLÉMENTS DE LISTE
+// =================
+ul,
+ol {
+  list-style: none;
+}
+
+// LIENS
+// =====
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: $transition-base;
+  
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// IMAGES
+// ======
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// FORMULAIRES
+// ===========
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  
+  &:focus {
+    outline: 2px solid $accent-color;
+    outline-offset: 2px;
+  }
+}
+
+// TABLEAUX
+// ========
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+// ACCESSIBILITÉ
+// =============
+:focus-visible {
+  outline: 2px solid $accent-color;
+  outline-offset: 2px;
+}
+
+// HIDDEN ATTRIBUTE
+[hidden] {
+  display: none !important;
+}
+
+// SELECTION
+::selection {
+  background-color: rgba($primary-color, 0.2);
+  color: $primary-color;
+}
+
+::-moz-selection {
+  background-color: rgba($primary-color, 0.2);
+  color: $primary-color;
+}
+
+// SCROLLBAR WEBKIT
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $gray-200;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $gray-400;
+  border-radius: $border-radius-sm;
+  
+  &:hover {
+    background-color: $gray-500;
+  }
+}
+
+// PRINT STYLES
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
+  
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
