@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Streamflix</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
-    
+
     <meta
       name="description"
       content="Streamflix - Votre plateforme ultime de films et séries en streaming. Découvrez Inception (2010, Sci-Fi/Thriller, ⭐4.5/5), The Dark Knight (2008, Action/Crime, ⭐4.8/5), Interstellar (2014, Sci-Fi/Drama, ⭐4.7/5), Pulp Fiction (1994, Crime/Drama, ⭐4.6/5), Matrix (1999, Action/Sci-Fi, ⭐4.5/5) et bien d'autres."
@@ -23,7 +31,11 @@
   </head>
   <body>
     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Navigation principale">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark fixed-top"
+        role="navigation"
+        aria-label="Navigation principale"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
             <img
@@ -32,29 +44,58 @@
               class="logo"
             />
           </a>
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
-          
+
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="main-menu" role="menubar">
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0"
+              id="main-menu"
+              role="menubar"
+            >
               <li class="nav-item">
-                <a class="nav-link active" role="menuitem" href="index.html" tabindex="0">Accueil</a>
+                <a
+                  class="nav-link active"
+                  role="menuitem"
+                  href="index.html"
+                  tabindex="0"
+                  >Accueil</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" role="menuitem" href="#films" tabindex="0">Films</a>
+                <a class="nav-link" role="menuitem" href="#films" tabindex="0"
+                  >Films</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" role="menuitem" href="#series" tabindex="0">Séries</a>
+                <a class="nav-link" role="menuitem" href="#series" tabindex="0"
+                  >Séries</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" role="menuitem" href="#mylist" tabindex="0">Ma liste</a>
+                <a class="nav-link" role="menuitem" href="#mylist" tabindex="0"
+                  >Ma liste</a
+                >
               </li>
             </ul>
-            
+
             <div class="d-flex align-items-center gap-3">
-              <form class="d-flex recherche" role="search" aria-label="Recherche de contenu" autocomplete="off">
+              <form
+                class="d-flex recherche"
+                role="search"
+                aria-label="Recherche de contenu"
+                autocomplete="off"
+              >
                 <div class="input-group">
                   <input
                     class="form-control"
@@ -65,12 +106,16 @@
                     aria-label="Rechercher un film ou une série"
                     required
                   />
-                  <button class="btn btn-primary" type="submit" aria-label="Valider la recherche">
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    aria-label="Valider la recherche"
+                  >
                     <i class="bi bi-search"></i>
                   </button>
                 </div>
               </form>
-              
+
               <div class="dropdown profile-menu" role="menu">
                 <button
                   class="btn btn-primary dropdown-toggle"
@@ -85,7 +130,7 @@
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li><a class="dropdown-item" href="#">Mon compte</a></li>
                   <li><a class="dropdown-item" href="#">Paramètres</a></li>
-                  <li><hr class="dropdown-divider"></li>
+                  <li><hr class="dropdown-divider" /></li>
                   <li><a class="dropdown-item" href="#">Déconnexion</a></li>
                 </ul>
               </div>
@@ -104,44 +149,57 @@
           <div class="row align-items-center overlay">
             <div class="col-lg-4 col-md-5 text-center order-0 order-lg-0">
               <img
-                src="images/films/inception.webp"
-                alt="Affiche du film Inception"
+                id="movie-poster"
+                alt="Affiche du film en bannière"
                 class="hero-poster img-fluid"
               />
             </div>
             <div class="col-lg-8 col-md-7 order-1 order-lg-1">
-              <h1 id="hero-title" class="display-3 fw-bold">Inception</h1>
-              <p class="lead">
-                Un voleur qui s'infiltre dans les rêves des autres pour voler leurs
-                secrets découvre qu'il doit réaliser l'impossible : planter une idée
-                plutôt que de la voler.
+              <h1 id="movie-title" class="display-3 fw-bold"></h1>
+              <p class="lead" id="movie-overview">
               </p>
               <div class="row meta mb-4">
                 <div class="col-sm-6 col-lg-3 mb-2">
-                  <small class="text-muted">Année</small><br>
+                  <small class="text-muted">Année</small><br />
                   <strong>2010</strong>
                 </div>
                 <div class="col-sm-6 col-lg-3 mb-2">
-                  <small class="text-muted">Durée</small><br>
+                  <small class="text-muted">Durée</small><br />
                   <strong>2h28</strong>
                 </div>
                 <div class="col-sm-6 col-lg-3 mb-2">
-                  <small class="text-muted">Note</small><br>
-                  <strong>⭐ 4.5/5</strong>
+                  <small class="text-muted">Note</small><br />
+                  <strong id="vote-average"></strong>
                 </div>
                 <div class="col-sm-6 col-lg-3 mb-2">
-                  <small class="text-muted">Genres</small><br>
+                  <small class="text-muted">Genres</small><br />
                   <strong>Sci-Fi, Thriller</strong>
                 </div>
+
+                <img id="movie-poster" />
               </div>
-              <div class="actions d-flex flex-wrap gap-2" role="group" aria-label="Actions Inception">
-                <button class="btn btn-primary btn-lg" aria-label="Lire Inception">
+
+              <div
+                class="actions d-flex flex-wrap gap-2"
+                role="group"
+                aria-label="Actions Inception"
+              >
+                <button
+                  class="btn btn-primary btn-lg"
+                  aria-label="Lire Inception"
+                >
                   <i class="bi bi-play-fill me-2"></i>Lecture
                 </button>
-                <button class="btn btn-outline-light btn-lg" aria-label="Plus d'informations sur Inception">
+                <button
+                  class="btn btn-outline-light btn-lg"
+                  aria-label="Plus d'informations sur Inception"
+                >
                   <i class="bi bi-info-circle me-2"></i>Plus d'infos
                 </button>
-                <button class="btn btn-outline-light" aria-label="Ajouter Inception à ma liste">
+                <button
+                  class="btn btn-outline-light"
+                  aria-label="Ajouter Inception à ma liste"
+                >
                   <i class="bi bi-plus-lg me-2"></i>Ma liste
                 </button>
               </div>
@@ -150,9 +208,16 @@
         </div>
       </section>
 
-      <section id="tendances" aria-labelledby="tendances-title" role="region" class="py-5">
+      <section
+        id="tendances"
+        aria-labelledby="tendances-title"
+        role="region"
+        class="py-5"
+      >
         <div class="container-fluid">
-          <h2 id="tendances-title" class="display-5 fw-bold mb-4">Tendances actuelles</h2>
+          <h2 id="tendances-title" class="display-5 fw-bold mb-4">
+            Tendances actuelles
+          </h2>
           <div class="row g-4" role="list">
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
@@ -163,14 +228,27 @@
                     class="card-img-top"
                   />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions The Dark Knight">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire The Dark Knight">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions The Dark Knight"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire The Dark Knight"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur The Dark Knight">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur The Dark Knight"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter The Dark Knight à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter The Dark Knight à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -190,7 +268,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
@@ -200,14 +278,27 @@
                     class="card-img-top"
                   />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions Interstellar">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire Interstellar">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions Interstellar"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire Interstellar"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur Interstellar">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur Interstellar"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter Interstellar à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter Interstellar à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -226,7 +317,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
@@ -236,14 +327,27 @@
                     class="card-img-top"
                   />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions Pulp Fiction">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire Pulp Fiction">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions Pulp Fiction"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire Pulp Fiction"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur Pulp Fiction">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur Pulp Fiction"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter Pulp Fiction à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter Pulp Fiction à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -266,23 +370,47 @@
         </div>
       </section>
 
-      <section id="recommandes" aria-labelledby="recommandes-title" role="region" class="py-5">
+      <section
+        id="recommandes"
+        aria-labelledby="recommandes-title"
+        role="region"
+        class="py-5"
+      >
         <div class="container-fluid">
-          <h2 id="recommandes-title" class="display-5 fw-bold mb-4">Recommandés pour vous</h2>
+          <h2 id="recommandes-title" class="display-5 fw-bold mb-4">
+            Recommandés pour vous
+          </h2>
           <div class="row g-4" role="list">
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
-                  <img src="images/films/inception.webp" alt="Affiche de Inception" class="card-img-top" />
+                  <img
+                    src="images/films/inception.webp"
+                    alt="Affiche de Inception"
+                    class="card-img-top"
+                  />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions Inception">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire Inception">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions Inception"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire Inception"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur Inception">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur Inception"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter Inception à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter Inception à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -301,20 +429,37 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
-                  <img src="images/films/matrix.jpeg" alt="Affiche de The Matrix" class="card-img-top" />
+                  <img
+                    src="images/films/matrix.jpeg"
+                    alt="Affiche de The Matrix"
+                    class="card-img-top"
+                  />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions The Matrix">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire The Matrix">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions The Matrix"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire The Matrix"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur The Matrix">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur The Matrix"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter The Matrix à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter The Matrix à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -333,7 +478,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
@@ -343,14 +488,27 @@
                     class="card-img-top"
                   />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions Forrest Gump">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire Forrest Gump">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions Forrest Gump"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire Forrest Gump"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur Forrest Gump">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur Forrest Gump"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter Forrest Gump à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter Forrest Gump à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -373,9 +531,16 @@
         </div>
       </section>
 
-      <section id="nouveautes" aria-labelledby="nouveautes-title" role="region" class="py-5">
+      <section
+        id="nouveautes"
+        aria-labelledby="nouveautes-title"
+        role="region"
+        class="py-5"
+      >
         <div class="container-fluid">
-          <h2 id="nouveautes-title" class="display-5 fw-bold mb-4">Nouveautés</h2>
+          <h2 id="nouveautes-title" class="display-5 fw-bold mb-4">
+            Nouveautés
+          </h2>
           <div class="row g-4" role="list">
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
@@ -386,14 +551,27 @@
                     class="card-img-top"
                   />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions Interstellar">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire Interstellar">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions Interstellar"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire Interstellar"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur Interstellar">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur Interstellar"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter Interstellar à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter Interstellar à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -412,7 +590,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
@@ -422,14 +600,27 @@
                     class="card-img-top"
                   />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions The Dark Knight">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire The Dark Knight">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions The Dark Knight"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire The Dark Knight"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur The Dark Knight">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur The Dark Knight"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter The Dark Knight à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter The Dark Knight à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -449,20 +640,37 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6 col-md-6" role="listitem">
               <div class="card movie-card h-100">
                 <div class="position-relative overflow-hidden">
-                  <img src="images/films/inception.webp" alt="Affiche de Inception" class="card-img-top" />
+                  <img
+                    src="images/films/inception.webp"
+                    alt="Affiche de Inception"
+                    class="card-img-top"
+                  />
                   <div class="card-overlay">
-                    <div class="actions d-flex gap-2 justify-content-center" role="group" aria-label="Actions Inception">
-                      <button class="btn btn-primary btn-sm" aria-label="Lire Inception">
+                    <div
+                      class="actions d-flex gap-2 justify-content-center"
+                      role="group"
+                      aria-label="Actions Inception"
+                    >
+                      <button
+                        class="btn btn-primary btn-sm"
+                        aria-label="Lire Inception"
+                      >
                         <i class="bi bi-play-fill"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Plus d'informations sur Inception">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Plus d'informations sur Inception"
+                      >
                         <i class="bi bi-info-circle"></i>
                       </button>
-                      <button class="btn btn-outline-light btn-sm" aria-label="Ajouter Inception à ma liste">
+                      <button
+                        class="btn btn-outline-light btn-sm"
+                        aria-label="Ajouter Inception à ma liste"
+                      >
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </div>
@@ -495,33 +703,81 @@
                 <div class="col-md-3 mb-3">
                   <h6 class="text-light mb-3">Légal</h6>
                   <ul class="list-unstyled">
-                    <li><a href="#" class="text-muted text-decoration-none">Conditions d'utilisation</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Mentions légales</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Politique de confidentialité</a></li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Conditions d'utilisation</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Mentions légales</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Politique de confidentialité</a
+                      >
+                    </li>
                   </ul>
                 </div>
                 <div class="col-md-3 mb-3">
                   <h6 class="text-light mb-3">Support</h6>
                   <ul class="list-unstyled">
-                    <li><a href="#" class="text-muted text-decoration-none">Aide</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">FAQ</a></li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Aide</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Contact</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >FAQ</a
+                      >
+                    </li>
                   </ul>
                 </div>
                 <div class="col-md-3 mb-3">
                   <h6 class="text-light mb-3">Compte</h6>
                   <ul class="list-unstyled">
-                    <li><a href="#" class="text-muted text-decoration-none">Mon profil</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Ma liste</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Historique</a></li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Mon profil</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Ma liste</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Historique</a
+                      >
+                    </li>
                   </ul>
                 </div>
                 <div class="col-md-3 mb-3">
                   <h6 class="text-light mb-3">Streamflix</h6>
                   <ul class="list-unstyled">
-                    <li><a href="#" class="text-muted text-decoration-none">À propos</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Carrières</a></li>
-                    <li><a href="#" class="text-muted text-decoration-none">Presse</a></li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >À propos</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Carrières</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-muted text-decoration-none"
+                        >Presse</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -531,32 +787,54 @@
             <div class="socials mb-4" aria-label="Réseaux sociaux">
               <h6 class="text-light mb-3">Suivez-nous</h6>
               <div class="d-flex gap-3">
-                <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram (lien factice)">
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm"
+                  aria-label="Instagram (lien factice)"
+                >
                   <i class="bi bi-instagram"></i>
                 </a>
-                <a href="#" class="btn btn-outline-light btn-sm" aria-label="Twitter (lien factice)">
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm"
+                  aria-label="Twitter (lien factice)"
+                >
                   <i class="bi bi-twitter"></i>
                 </a>
-                <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook (lien factice)">
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm"
+                  aria-label="Facebook (lien factice)"
+                >
                   <i class="bi bi-facebook"></i>
                 </a>
-                <a href="#" class="btn btn-outline-light btn-sm" aria-label="YouTube (lien factice)">
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm"
+                  aria-label="YouTube (lien factice)"
+                >
                   <i class="bi bi-youtube"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <hr class="border-secondary">
+        <hr class="border-secondary" />
         <div class="row">
           <div class="col-12 text-center">
-            <p class="text-muted mb-0">&copy; 2024 Streamflix. Tous droits réservés.</p>
+            <p class="text-muted mb-0">
+              &copy; 2024 Streamflix. Tous droits réservés.
+            </p>
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
